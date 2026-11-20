@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "mediaplayer",
+  "version": "${version}",
+  "name": "Media Player",
+  "description": "A customizable HUD that shows the media playing on your PC, with album art, progress, playback controls and volume.",
+  "authors": [
+    "Boes"
+  ],
+  "icon": "assets/mediaplayer/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      {
+        "adapter": "kotlin",
+        "value": "dev.boes.mediaplayer.MediaPlayerClient"
+      }
+    ],
+    "modmenu": [
+      "dev.boes.mediaplayer.compat.ModMenuIntegration"
+    ],
+    "oneconfig:config": [
+      "dev.boes.mediaplayer.compat.oneconfig.OneConfigEntrypoint"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=25",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=${fabric_kotlin_version}",
+    "yet_another_config_lib_v3": "*"
+  },
+  "recommends": {
+    "modmenu": "*"
+  },
+  "suggests": {
+    "oneconfig": "*"
+  }
+}
